@@ -7,9 +7,9 @@ from config_data.config import Config, load_config
 from handlers import other_handlers, user_handlers
 from keyboards.main_menu import set_main_menu
 
-
 # Инициализируем логгер
 logger = logging.getLogger(__name__)
+
 
 # Функция конфигурирования и запуска бота
 async def main():
@@ -42,9 +42,9 @@ async def main():
     await bot.delete_webhook(drop_pending_updates=True)
     await dp.start_polling(bot)
 
+
 if __name__ == '__main__':
     try:
         asyncio.run(main())
     except (KeyboardInterrupt, SystemExit):
         logger.error("Бот был выключен!")
-
